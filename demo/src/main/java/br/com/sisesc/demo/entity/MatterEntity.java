@@ -7,8 +7,10 @@ import java.util.UUID;
 @Table (name = "matter")
 public class MatterEntity {
 
-    @Id @GeneratedValue
-    private UUID id;
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private Integer workLoad;
+    @ManyToOne(fetch = FetchType.LAZY)
+    TeacherEntity teacherEntity;
 
 }

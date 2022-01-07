@@ -18,6 +18,6 @@ public class GuardianEntity {
     private AddressEntity addressEntity;
     @NotNull @NotEmpty @Length(min = 10)
     private String contactNumber;
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     private StudentEntity studentEntity;
 }

@@ -12,17 +12,17 @@ import java.util.UUID;
 @Table(name = "student")
 public class StudentEntity {
 
-    @Id @GeneratedValue
-    private UUID id;
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     @NotNull @NotEmpty @Length(min = 10)
     private String nameStudent;
     @NotNull @NotEmpty @Length(min = 11)
     private String cpf;
-    @JsonIgnore @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY)
     private ClassEntity classEntity;
-    @JsonIgnore @OneToOne
+    @OneToOne(fetch = FetchType.EAGER, mappedBy = "studentEntity")
     private GuardianEntity guardianEntity;
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     private AddressEntity addressEntity;
     private String dateOfBirthday;
 

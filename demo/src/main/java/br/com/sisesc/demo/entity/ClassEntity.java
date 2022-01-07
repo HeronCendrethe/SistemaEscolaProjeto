@@ -7,9 +7,12 @@ import java.util.UUID;
 @Table (name = "class")
 public class ClassEntity {
 
-    @Id
-    private UUID id;
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    @ManyToOne
     private MatterEntity matterEntity;
+    @OneToOne(fetch = FetchType.LAZY,mappedBy = "classEntity")
+    private StudentEntity studentEntity;
 
 
 }
