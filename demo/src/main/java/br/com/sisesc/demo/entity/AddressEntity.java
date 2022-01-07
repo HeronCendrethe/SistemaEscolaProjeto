@@ -3,7 +3,9 @@ package br.com.sisesc.demo.entity;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+/**
+ * @author Heron Cendrethe
+ * */
 @Entity
 @Table (name = "address")
 public class AddressEntity {

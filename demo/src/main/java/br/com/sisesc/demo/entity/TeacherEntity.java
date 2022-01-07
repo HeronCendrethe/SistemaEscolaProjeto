@@ -7,7 +7,9 @@ import javax.persistence.*;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.validation.constraints.NotEmpty;
 import java.util.UUID;
-
+/**
+ * @author Heron Cendrethe
+ * */
 @Entity
 @Table (name = "teacher")
 public class TeacherEntity {

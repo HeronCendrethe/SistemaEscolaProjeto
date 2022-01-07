@@ -5,7 +5,9 @@ import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
-
+/**
+ * @author Heron Cendrethe
+ * */
 @Entity
 @Table (name = "guardian")
 public class GuardianEntity {
@@ -18,6 +20,6 @@ public class GuardianEntity {
     private AddressEntity addressEntity;
     @NotNull @NotEmpty @Length(min = 10)
     private String contactNumber;
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "guardianEntity")
     private StudentEntity studentEntity;
 }
